@@ -1,3 +1,7 @@
 .fuente-cursiva {
     font-family: 'Brush Script MT', cursive;
 }
+
+thead{
+   background-color:#5CBF69;
+}
