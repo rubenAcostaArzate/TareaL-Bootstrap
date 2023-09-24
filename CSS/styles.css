@@ -5,3 +5,17 @@
 thead{
    background-color:#5CBF69;
 }
+
+h1{
+    text-align: center;
+    font-family: 'Brush Script MT', cursive;
+}
+
+.primera-receta{
+    background-color: #F4C774;
+
+}
+
+.segunda-receta{
+    background-color: #B1E1B7;
+}
