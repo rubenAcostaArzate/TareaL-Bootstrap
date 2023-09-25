@@ -46,3 +46,16 @@ table{
     font-size:large;
     font-family: 'Brush Script MT'
 }
+
+.opcion-multiple{
+    margin-left:5%;
+}
+
+.subtitulos-formularios{
+    margin-left: 5%;
+    font-family: 'Brush Script MT'
+}
+
+.botones-derecha{
+    margin-right: 10%;
+}
