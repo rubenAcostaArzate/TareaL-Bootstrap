@@ -2,18 +2,21 @@
     font-family: 'Brush Script MT', cursive;
 }
 
-thead{
-   background-color:#5CBF69;
+thead {
+    background-color:#5CBF69 !important;
 }
 
 h1{
     text-align: center;
-    font-family: 'Brush Script MT', cursive;
+}
+
+.primera-receta,
+.segunda-receta {
+    width: 50%;
 }
 
 .primera-receta{
     background-color: #F4C774;
-
 }
 
 .segunda-receta{
@@ -25,7 +28,6 @@ h1{
 }
 
 .inventario{
-
     margin-left: 20%;
     margin-right: 20%;
     text-align: center;
@@ -38,13 +40,12 @@ table{
 }
 
 .boton-regresa{
-   margin-left: 25%;
+    margin-left: 25%;
 }
 
 .mb-3{
     font-weight:bold ;
     font-size:large;
-    font-family: 'Brush Script MT'
 }
 
 .opcion-multiple{
@@ -53,7 +54,6 @@ table{
 
 .subtitulos-formularios{
     margin-left: 5%;
-    font-family: 'Brush Script MT'
 }
 
 .botones-derecha{
