@@ -1,9 +1,10 @@
 .fuente-cursiva {
-    font-family: 'Brush Script MT', cursive;
+    font-family: 'Brush Script MT',cursive;
+    
 }
 
 thead {
-    background-color:#5CBF69 !important;
+    background-color:#5CBF69 ;
 }
 
 h1{
@@ -25,6 +26,19 @@ h1{
 
 .ingredientes{
     background-color: #C8C5C0;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size:larger;
+    color:gray;
+}
+
+.recetas{
+    background-color: #C8C5C0;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: gray;
+    
+    
 }
 
 .inventario{
@@ -53,9 +67,35 @@ table{
 }
 
 .subtitulos-formularios{
-    margin-left: 5%;
+    margin-left: 20%;
 }
 
 .botones-derecha{
+    margin-right: 20%;
+}
+
+.botones-izquierda{
+    margin-left:20% ;
+}
+
+.botones-enmedio{
+    margin-left: 10%;
     margin-right: 10%;
+}
+
+.agrega-archivo{
+    margin-left: 20%;
+    margin-right:20%;
+}
+
+img{
+    margin-left:35%;
+    margin-right: 35%;
+} 
+
+hr{
+    height: 5px;
+    background-color: black;
+    margin-left: 15%;
+    margin-right: 15%;
 }
