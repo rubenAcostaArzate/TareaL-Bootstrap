@@ -28,7 +28,7 @@ h1{
     background-color: #C8C5C0;
     margin-left: 20%;
     margin-right: 20%;
-    font-size:larger;
+    font-size: 20px;
     color:gray;
 }
 
@@ -37,8 +37,8 @@ h1{
     margin-left: 20%;
     margin-right: 20%;
     color: gray;
-    
-    
+    font-size: 18px;
+    height: 500px;    
 }
 
 .inventario{
@@ -84,8 +84,8 @@ table{
 }
 
 .agrega-archivo{
+    margin-top: 20px;
     margin-left: 20%;
-    margin-right:20%;
 }
 
 img{
@@ -97,5 +97,53 @@ hr{
     height: 5px;
     background-color: black;
     margin-left: 15%;
+    margin-right: 15%;
+}
+
+textarea {
+    max-width: 60%;
+    border: none;
+    border-radius: 5px;
+}
+
+input[type="file"] {
+    display: inline-block;
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.receta-ingredientes{
+    margin-left: 15%;
+    margin-bottom: 50px;
+}
+
+.listado-ingredientes li {
+    margin-top: 10px;
+}
+
+.separacion {
+    margin: 0 auto;
+    height: 3px;
+    width: 80%;
+    background-color: gray;
+}
+
+.receta-pasos {
+    margin: 0 auto;
+    max-width: 70%;
+}
+
+.receta-imagen {
+    display: flex;
+    justify-content: center;
+}
+
+.receta-boton {
     margin-right: 15%;
 }
