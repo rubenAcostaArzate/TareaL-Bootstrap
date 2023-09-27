@@ -1,19 +1,23 @@
 .fuente-cursiva {
-    font-family: 'Brush Script MT', cursive;
+    font-family: 'Brush Script MT',cursive;
+    
 }
 
-thead{
-   background-color:#5CBF69;
+thead {
+    background-color:#5CBF69 ;
 }
 
 h1{
     text-align: center;
-    font-family: 'Brush Script MT', cursive;
+}
+
+.primera-receta,
+.segunda-receta {
+    width: 50%;
 }
 
 .primera-receta{
     background-color: #F4C774;
-
 }
 
 .segunda-receta{
@@ -22,10 +26,22 @@ h1{
 
 .ingredientes{
     background-color: #C8C5C0;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 20px;
+    color:gray;
+}
+
+.recetas{
+    background-color: #C8C5C0;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: gray;
+    font-size: 18px;
+    height: 500px;    
 }
 
 .inventario{
-
     margin-left: 20%;
     margin-right: 20%;
     text-align: center;
@@ -38,13 +54,12 @@ table{
 }
 
 .boton-regresa{
-   margin-left: 25%;
+    margin-left: 25%;
 }
 
 .mb-3{
     font-weight:bold ;
     font-size:large;
-    font-family: 'Brush Script MT'
 }
 
 .opcion-multiple{
@@ -52,14 +67,88 @@ table{
 }
 
 .subtitulos-formularios{
-    margin-left: 5%;
-    font-family: 'Brush Script MT'
+    margin-left: 20%;
 }
 
 .botones-derecha{
+    margin-right: 20%;
+}
+
+.botones-izquierda{
+    margin-left:20% ;
+}
+
+.botones-enmedio{
+    margin-left: 10%;
     margin-right: 10%;
 }
 
+<<<<<<< HEAD
 .costo{
     margin-left: 10%;
+=======
+.agrega-archivo{
+    margin-top: 20px;
+    margin-left: 20%;
+}
+
+img{
+    margin-left:35%;
+    margin-right: 35%;
+} 
+
+hr{
+    height: 5px;
+    background-color: black;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+textarea {
+    max-width: 60%;
+    border: none;
+    border-radius: 5px;
+}
+
+input[type="file"] {
+    display: inline-block;
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.receta-ingredientes{
+    margin-left: 15%;
+    margin-bottom: 50px;
+}
+
+.listado-ingredientes li {
+    margin-top: 10px;
+}
+
+.separacion {
+    margin: 0 auto;
+    height: 3px;
+    width: 80%;
+    background-color: gray;
+}
+
+.receta-pasos {
+    margin: 0 auto;
+    max-width: 70%;
+}
+
+.receta-imagen {
+    display: flex;
+    justify-content: center;
+}
+
+.receta-boton {
+    margin-right: 15%;
+>>>>>>> 3652e86b0dac1234b2a87f6cdf2183857980fab6
 }
