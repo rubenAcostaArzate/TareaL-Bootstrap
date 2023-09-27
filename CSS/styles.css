@@ -83,10 +83,6 @@ table{
     margin-right: 10%;
 }
 
-<<<<<<< HEAD
-.costo{
-    margin-left: 10%;
-=======
 .agrega-archivo{
     margin-top: 20px;
     margin-left: 20%;
@@ -150,5 +146,4 @@ input[type="file"]::file-selector-button {
 
 .receta-boton {
     margin-right: 15%;
->>>>>>> 3652e86b0dac1234b2a87f6cdf2183857980fab6
 }
