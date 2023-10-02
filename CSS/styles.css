@@ -58,29 +58,12 @@ table{
 }
 
 .mb-3{
-    font-weight:bold ;
-    font-size:large;
-}
-
-.opcion-multiple{
-    margin-left:5%;
+    font-weight: bold;
+    font-size: large;
 }
 
 .subtitulos-formularios{
     margin-left: 20%;
-}
-
-.botones-derecha{
-    margin-right: 20%;
-}
-
-.botones-izquierda{
-    margin-left:20% ;
-}
-
-.botones-enmedio{
-    margin-left: 10%;
-    margin-right: 10%;
 }
 
 .agrega-archivo{
@@ -89,7 +72,7 @@ table{
 }
 
 img{
-    margin-left:35%;
+    margin-left: 35%;
     margin-right: 35%;
 } 
 
