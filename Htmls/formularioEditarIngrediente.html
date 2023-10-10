@@ -24,8 +24,27 @@
                 <input type="text" class="form-control" id="nombre" value="Papas">
             </div>
             <div class="mb-3">
-                <label for="cantidad" class="form-label">Cantidad (kg)</label>
+                <label for="tipo_producto" class="form-label">Tipo producto</label><br/>
+                <select name="where">
+                    <option value="Escoge el tipo de producto">Escoge el tipo del producto</option>
+                    <option value="solido">kg</option>
+                    <option value="liquido">gr</option>
+                </select>
+                
+            </div>
+            <div class="mb-3">
+                <label for="cantidad" class="form-label">Cantidad </label>
                 <input type="number" class="form-control" id="cantidad" value="15" min="0">
+            </div>
+            <div class="mb-3">
+                <label for="medida" class="form-label">Medida</label><br/>
+                <select name="where">
+                    <option value="Escoge la medida del producto">Escoge la medida del producto</option>
+                    <option value="kilogramos">kg</option>
+                    <option value="gramos">gr</option>
+                    <option value="libras">lb</option>
+                </select>
+               
             </div>
             <div class="mb-3">
                 <label for="costo" class="form-label">Costo</label>
@@ -33,8 +52,25 @@
             </div>
             <div class="mb-3">
                 <label for="fecha" class="form-label">Fecha de Adquisión</label>
-                <input type="date" class="form-control" id="fecha" value="2023-02-14">
+                <input type="date" class="form-control" id="fecha" value="2023-10-10">
             </div>
+            <div class="mb-3">
+                <label for="fecha" class="form-label">Fecha de Caducidad</label>
+                <input type="date" class="form-control" id="fecha" value="2026-06-19">
+            </div>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre del proveedor</label>
+                <input type="text" class="form-control" id="nombre" value="Ruben Acosta Arzate">
+            </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripcion</label>
+                <input type="text" class="form-control" id="descripcion" value="">
+            </div>
+            <div class="mb-3">
+                <label for="comentarios" class="form-label">Comentarios</label>
+                <input type="text" class="form-control" id="comentarios" value="">
+            </div>
+
             <div class="d-flex justify-content-end mt-5">
                 <a class="btn btn-primary" href="inventario.html">Aceptar cambios</a>
             </div>
