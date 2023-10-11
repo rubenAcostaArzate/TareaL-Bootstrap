@@ -1,3 +1,7 @@
+<%@ page contentType="text/html"; charset=UTF-8" %>
+
+<% request.setCharacterEncoding("UTF-8"); %>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,7 +22,7 @@
     <main class="pt-4 pb-4">
         <h1 class="text-center">Editar ingrediente</h1>
 
-        <form class="mx-auto p-5 w-50">
+        <form class="mx-auto p-5 w-50 form" method="post" action="validacion">
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="nombre" value="Papas">
@@ -49,8 +53,8 @@
                 <input type="number" class="form-control" id="costo" value="500" min="0">
             </div>
             <div class="mb-3">
-                <label for="fechaAdquisicion" class="form-label">Fecha de Adquisión</label>
-                <input type="date" class="form-control" id="fechaAdquisicion" value="2023-10-10">
+                <label for="fecha" class="form-label">Fecha de Adquisión</label>
+                <input type="date" class="form-control" id="fechaAdquisicon" value="2023-10-10">
             </div>
             <div class="mb-3">
                 <label for="fechaCaducidad" class="form-label">Fecha de Caducidad</label>
