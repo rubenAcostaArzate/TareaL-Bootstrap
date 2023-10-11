@@ -130,3 +130,8 @@ input[type="file"]::file-selector-button {
 .receta-boton {
     margin-right: 15%;
 }
+
+.textarea-form {
+    max-width: 100%;
+    resize: none;
+}
