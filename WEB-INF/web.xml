@@ -7,7 +7,7 @@
   version="4.0"
   metadata-complete="true"><display-name>HolaMundoServlet</display-name>
 <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
+    <welcome-file>Htmls/formularioEditarIngrediente.html</welcome-file>
 </welcome-file-list>
 
 <servlet>
