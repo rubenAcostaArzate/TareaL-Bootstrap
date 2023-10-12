@@ -53,9 +53,9 @@ public class ValidacionFormServlet extends HttpServlet {
             error.put("fechaCaducidad", "La fecha de caducidad del producto es anterior a la actual" );
         } */
 
-        if (request.getParameter("nombreProvedor") == null || request.getParameter("nombreProvedor") == "") {
+        if (request.getParameter("nombreProveedor") == null || request.getParameter("nombreProvedor") == "") {
             datosValidados = false;
-            errores.put("fechaCaducidad","El nombre del provedor del producto es nulo");
+            errores.put("nombreProveedor","El nombre del provedor del producto es nulo");
         }
     }
 }
