@@ -2,6 +2,8 @@
 
 <% request.setCharacterEncoding("UTF-8"); %>
 
+<!-- La primera vez que se entre los campos deben estar en blanco
+Este actuaria como el de error.jsp-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,17 +24,24 @@
     <main class="pt-4 pb-4">
         <h1 class="text-center">Editar ingrediente</h1>
 
-        <form class="mx-auto p-5 w-50 form" method="post" action="validacion">
+        <form class="mx-auto p-5 w-50" method="post" action="ValidacionFormServlet">
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombre" value="Papas">
+                <input type="text" class="form-control" id="nombre" value="<%= request.getParameter("nombre") %>" />
+                <div class="text-danger">
+                    <%
+                    if (request.getAttribute("nombreError") != null) {
+                        out.println(request.getAttribute("nombreError"));
+                    }
+                    %>
+                </div>
             </div>
             <div class="mb-3">
                 <label for="tipo_producto" class="form-label" id="tipoProducto">Tipo producto</label><br/>
                 <select name="where">
                     <option value="">Escoge el tipo del producto</option>
-                    <option value="solido">kg</option>
-                    <option value="liquido">gr</option>
+                    <option value="solido">Solido</option>
+                    <option value="liquido">Liquido</option>
                 </select>
             </div>
             <div class="mb-3">
@@ -50,19 +59,19 @@
             </div>
             <div class="mb-3">
                 <label for="costo" class="form-label">Costo</label>
-                <input type="number" class="form-control" id="costo" value="500" min="0">
+                <input name="costo" type="number" class="form-control" id="costo" value="500" min="0">
             </div>
             <div class="mb-3">
-                <label for="fecha" class="form-label">Fecha de Adquisión</label>
-                <input type="date" class="form-control" id="fechaAdquisicon" value="2023-10-10">
+                <label for="fechaAdquisicion" class="form-label">Fecha de Adquisión</label>
+                <input name="fechaAdquisicion" type="date" class="form-control" id="fechaAdquisicion" value="2023-10-10">
             </div>
             <div class="mb-3">
                 <label for="fechaCaducidad" class="form-label">Fecha de Caducidad</label>
-                <input type="date" class="form-control" id="fechaCaducidad" value="2026-06-19">
+                <input name="fechaCaducidad" type="date" class="form-control" id="fechaCaducidad" value="2026-06-19">
             </div>
             <div class="mb-3">
                 <label for="nombreProvedor" class="form-label">Nombre del proveedor</label>
-                <input type="text" class="form-control" id="nombreProvedor" value="Ruben Acosta Arzate">
+                <input  required ="text" class="form-control" id="nombreProvedor" value="Ruben Acosta Arzate">
             </div>
             <div class="mb-3">
                 <label for="descripcion" class="form-label">Descripcion</label>
@@ -74,7 +83,7 @@
             </div>
 
             <div class="d-flex justify-content-end mt-5">
-                <a class="btn btn-primary" href="inventario.html">Aceptar cambios</a>
+                <button type="submit" class="btn btn-primary">Aceptar cambios</button>
             </div>
         </form>
         <div class="boton-regresa">

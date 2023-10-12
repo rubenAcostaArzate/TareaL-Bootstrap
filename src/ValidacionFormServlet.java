@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 
+// Este es el que debe de mandar a una pagina de error o una pagina de "exito" los .jsp
 public class ValidacionFormServlet extends HttpServlet {
     
     /*Metodo auxiliar que con una fecha recibida en cadena nos dice si es posterior 
@@ -17,15 +18,18 @@ public class ValidacionFormServlet extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
+        System.out.println("Pruebaaa");
+
+        request.getRequestDispatcher("/WEB-INF/jsp/validado.jsp").forward(request, response);
+
         // Validando datos del formulario
         boolean datosValidados = true;
         HashMap<String, String> errores = new HashMap<>();
 
-        String action = "validado.jsp";
-        Date fecha_actual= new Date();
-        String cadena=fecha_actual.toString();
+        Date fecha_actual = new Date();
+        String cadena = fecha_actual.toString();
 
-        if (request.getParameter("nombre") == null || request.getParameter("nombre") == "") {
+        if (request.getParameter("nombre") == null || request.getParameter("nombre").equals("")) {
             datosValidados = false;
             errores.put("nombre","El nombre del producto es nulo");
         }
@@ -57,5 +61,14 @@ public class ValidacionFormServlet extends HttpServlet {
             datosValidados = false;
             errores.put("fechaCaducidad","El nombre del provedor del producto es nulo");
         }
+
+        if(datosValidados) {
+            request.getRequestDispatcher("/WEB-INF/jsp/validado.jsp").forward(request, response);
+        } else {
+            System.out.println("Adjuntando errores");
+            request.setAttribute("errores", errores);
+            request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request, response);
+        }
+
     }
 }
