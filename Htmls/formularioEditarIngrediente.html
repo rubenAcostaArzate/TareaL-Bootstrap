@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Editar ingrediente</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../CSS/styles.css" />
+    <link rel="stylesheet" href="CSS/styles.css" />
 </head>
 <body>
 
@@ -24,8 +24,8 @@
                 <input type="text" class="form-control" id="nombre" value="Papas">
             </div>
             <div class="mb-3">
-                <label for="tipo_producto" class="form-label" id="tipoProducto">Tipo producto</label><br/>
-                <select name="where">
+                <label for="tipo_producto" class="form-label">Tipo producto</label><br/>
+                <select name="where" id="tipo_producto">
                     <option value="">Escoge el tipo del producto</option>
                     <option value="solido">Solido</option>
                     <option value="liquido">Liquido</option>
@@ -37,7 +37,7 @@
             </div>
             <div class="mb-3">
                 <label for="medida" class="form-label">Medida</label><br/>
-                <select name="where">
+                <select name="where" id="medida">
                     <option value="">Escoge la medida del producto</option>
                     <option value="kilogramos">kg</option>
                     <option value="gramos">gr</option>
@@ -57,8 +57,8 @@
                 <input name="fechaCaducidad" type="date" class="form-control" id="fechaCaducidad" value="2026-06-19">
             </div>
             <div class="mb-3">
-                <label for="nombreProvedor" class="form-label">Nombre del proveedor</label>
-                <input  required ="text" class="form-control" id="nombreProvedor" value="Ruben Acosta Arzate">
+                <label for="nombreProveedor" class="form-label">Nombre del proveedor</label>
+                <input type="text" class="form-control" id="nombreProveedor" value="Ruben Acosta Arzate">
             </div>
             <div class="mb-3">
                 <label for="descripcion" class="form-label">Descripcion</label>
