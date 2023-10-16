@@ -54,8 +54,8 @@
                 %>
                 <select name="tipo_producto" id="tipo_producto">
                     <option value="" <%= tipoProducto.equals("") ? "selected" : "" %>>Escoge el tipo del producto</option>
-                    <option value="solido" <%= tipoProducto.equals("solido") ? "selected" : "" %>>Solido</option>
-                    <option value="liquido" <%= tipoProducto.equals("liquido") ? "selected" : "" %>>Liquido</option>
+                    <option value="solido" <%= tipoProducto.equals("solido") ? "selected" : "" %>>Sólido</option>
+                    <option value="liquido" <%= tipoProducto.equals("liquido") ? "selected" : "" %>>Líquido</option>
                 </select>
                 <div class="text-danger">
                     <%
@@ -179,7 +179,7 @@
                 </div>
             </div>
             <div class="mb-3">
-                <label for="descripcion" class="form-label">Descripcion</label>
+                <label for="descripcion" class="form-label">Descripción</label>
                 <%
                     String descrip = request.getParameter("descripcion");
                     if (request.getParameter("descripcion") == null) {
