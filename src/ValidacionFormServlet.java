@@ -73,13 +73,15 @@ public class ValidacionFormServlet extends HttpServlet {
         arregloFecha[2]=Integer.parseInt(arregloSFecha[5]);
     
         return arregloFecha;
-      }
+    }
     
-      public boolean esPosterior(String fecha){
-        String[] arregloSFecha=fecha.split("/");
+    public boolean esPosterior(String fecha){
+        String[] arregloSFecha=fecha.split("-");
         int[] arregloFecha=new int[3];
     
         for(int i=0; i<arregloSFecha.length;i++){
+            if(arregloSFecha[i].equals(""))
+                return true;
             arregloFecha[i]=Integer.parseInt(arregloSFecha[i]);
         }
     
@@ -88,66 +90,87 @@ public class ValidacionFormServlet extends HttpServlet {
         int[] arregloFechaActual=convierteFecha(fechaActual);
         
         for (int i =arregloFecha.length-1;  i >0 ; i--){
-          if (arregloFechaActual[i]<arregloFecha[i]) {
-              return true;
-          }
+            if (arregloFechaActual[i]<arregloFecha[i]) {
+                return true;
+            }
         } 
         
         return false;
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
-        System.out.println("Pruebaaa");
-
-        request.getRequestDispatcher("/WEB-INF/jsp/validado.jsp").forward(request, response);
 
         // Validando datos del formulario
         boolean datosValidados = true;
         HashMap<String, String> errores = new HashMap<>();
 
-        Date fecha_actual = new Date();
-        String cadena = fecha_actual.toString();
-
         if (request.getParameter("nombre") == null || request.getParameter("nombre").equals("")) {
             datosValidados = false;
+            request.setAttribute("nombreError", "El nombre del producto es obligatorio");
             errores.put("nombre","El nombre del producto es nulo");
         }
 
-        /*Aqui irian las validaciones para select si tan solo supiera como hacerlas XD*/
+        if (request.getParameter("tipo_producto") == "") {
+            datosValidados = false;
+            request.setAttribute("tipo_productoError", "El tipo del producto es obligatorio");
+            errores.put("tipo_producto", "El tipo del producto es obligatorio");
+        }
+
+        if (request.getParameter("cantidad") == null || request.getParameter("cantidad") == "") {
+            datosValidados = false;
+            request.setAttribute("cantidadError", "La cantidad de productos es obligatorio");
+            errores.put("cantidad","La cantidad de productos es obligatorio");
+        }
+
+        if (request.getParameter("medida") == "") {
+            datosValidados = false;
+            request.setAttribute("tipo_medidaError", "La medida del producto es obligatoria");
+            errores.put("medida","La medida del producto es obligatoria");
+        }
 
         if (request.getParameter("costo") == null || request.getParameter("costo") == "") {
             datosValidados = false;
-            errores.put("costo","El costo del producto es nulo");
+            request.setAttribute("costoError", "El costo del producto es obligatorio");
+            errores.put("costo","El costo del producto es obligatorio");
         }
 
-        if (request.getParameter("fechaAdquisicion") == null || request.getParameter("fechaAdquisicion") == "") {
+        if (request.getParameter("fechaAdquisicion") == "") {
             datosValidados = false;
-            errores.put("fechaAdquisicion","La fecha de adquisicion del producto es nula");
-        }else if(esPosterior(request.getParameter("fechaAdquisicion"))){
+            request.setAttribute("fechaAdquisicionError", "La fecha de adquisicion del producto es obligatoria");
+            errores.put("fechaAdquisicion","La fecha de adquisicion del producto es obligatoria");
+        }/*else if(esPosterior(request.getParameter("fechaAdquisicion"))){
             datosValidados=false;
             errores.put("fechaAdquisicion", "La fecha de adquisicion del producto es posterior a la actual" );
-        } 
+        } */
 
-        if (request.getParameter("fechaCaducidad") == null || request.getParameter("fechaCaducidad") == "") {
+        if (request.getParameter("fechaCaducidad") == "") {
             datosValidados = false;
-            errores.put("fechaCaducidad","La fecha de caducidad del producto es nula");
-        }else if(!esPosterior(request.getParameter("fechaCaducidad"))){
+            request.setAttribute("fechaCaducidadError", "La fecha de caducidad del producto es obligatoria");
+            errores.put("fechaCaducidad","La fecha de caducidad del producto es obligatoria");
+        }/*else if(!esPosterior(request.getParameter("fechaCaducidad"))){
             datosValidados=false;
             errores.put("fechaCaducidad", "La fecha de caducidad del producto es anterior a la actual" );
-        } 
+        } */
 
-        if (request.getParameter("nombreProveedor") == null || request.getParameter("nombreProvedor") == "") {
+        if (request.getParameter("nombreProveedor") == null || request.getParameter("nombreProveedor") == "") {
             datosValidados = false;
-            errores.put("nombreProveedor","El nombre del provedor del producto es nulo");
+            request.setAttribute("nombreProveedorError", "El nombre del proveedor del producto es obligatorio");
+            errores.put("nombreProveedor","El nombre del proveedor del producto es obligatorio");
         }
 
+        if (request.getParameter("descripcion") == null || request.getParameter("descripcion") == "") {
+            datosValidados = false;
+            request.setAttribute("descripcionError", "La descripcion del producto es obligatoria");
+            errores.put("descripcion","La descripcion del producto es obligatoria");
+        }
+
+
+        // Verificando si hubo un error
         if(datosValidados) {
-            request.getRequestDispatcher("/WEB-INF/jsp/validado.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/jsp/inventario.jsp").forward(request, response);
         } else {
-            System.out.println("Adjuntando errores");
             request.setAttribute("errores", errores);
-            request.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/jsp/formuarioEditarIngrediente.jsp").forward(request, response);
         }
 
     }

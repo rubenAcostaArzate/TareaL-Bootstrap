@@ -9,18 +9,17 @@
 <display-name>Validacion</display-name>
 <welcome-file-list>
     <welcome-file>Htmls/formularioEditarIngrediente.html</welcome-file>
-    <!-- <welcome-file>WEB-INF/jsp/formularioEditarIngrediente.jsp</welcome-file> -->
 </welcome-file-list>
 
-<!-- <servlet>
-    <servlet-name>ValidacionFormServlet</servlet-name>
-    <servlet-class>/WEB-INF/jsp/validacion.jsp</servlet-class>
+<servlet>
+    <servlet-name>formularioEditarIngredienteServlet</servlet-name>
+    <servlet-class>/WEB-INF/jsp/formuarioEditarIngrediente.jsp</servlet-class>
 </servlet>
 
 <servlet-mapping>
-    <servlet-name>ValidacionFormServlet</servlet-name>
-    <url-pattern>/validacion.jsp</url-pattern>
-</servlet-mapping>   -->
+    <servlet-name>formularioEditarIngredienteServlet</servlet-name>
+    <url-pattern>/formuarioEditarIngrediente.jsp</url-pattern>
+</servlet-mapping>
 
 <servlet>
     <servlet-name>ValidacionFormServlet</servlet-name>
@@ -29,7 +28,7 @@
 
 <servlet-mapping>
     <servlet-name>ValidacionFormServlet</servlet-name>
-    <url-pattern>/ValidacionFormServlet</url-pattern>
+    <url-pattern>/validacionFormServlet</url-pattern>
 </servlet-mapping>
 
 </web-app>
